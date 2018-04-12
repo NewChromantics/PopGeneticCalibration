@@ -58,14 +58,15 @@ public class ImageCompare : MonoBehaviour {
 		int BestX=0, BestY=0;
 		using ( var Progress = new ScopedProgressBar("Extracting pixel scores"))
 		{
-			var NotifyRate = 1000;
+			var NotifyRate = 1;
 			var maxi = Texture2.height * Texture2.width;
 			for (int y = 0; y < Texture2.height;	y++ )
 			{
 				for (int x = 0; x < Texture2.width; x++)
 				{
 					var i = x + y * Texture2.width;
-					Progress.SetProgress("Extracting pixels", i, maxi, NotifyRate);
+					if ( x == 0 )
+						Progress.SetProgress("Extracting pixels", i, maxi, NotifyRate);
 					var Score = GetWhiteScore(x, y);
 					if (!BestScore.HasValue || Score > BestScore.Value && Score > 0 )
 					{
