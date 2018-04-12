@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-[System.Serializable]
-public class UnityEvent_Texture : UnityEvent<Texture> { }
 
 public class ImageExtractFromCamera : MonoBehaviour {
+
+	[InspectorButton("Render")]
+	public bool _Render;
 
 	public Camera Source;
 	public RenderTexture Target;
@@ -16,8 +17,10 @@ public class ImageExtractFromCamera : MonoBehaviour {
 
 	public void	Render()
 	{
+		var OldTarget = Source.targetTexture;
 		Source.targetTexture = Target;
 		Source.Render();
+		Source.targetTexture = OldTarget;
 		OnTargetChanged.Invoke(Target);
 	}
 

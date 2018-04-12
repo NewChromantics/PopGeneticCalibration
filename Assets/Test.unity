@@ -247,9 +247,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4a77953c4434c7697fa1186cd85a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GroundTruthTexture: {fileID: 0}
-  GroundTruthPoints: []
-  MaxDistance: 100
+  GroundTruthTexture: {fileID: 2800000, guid: 0224c65d1863b4102bd0f2dacc49bb7c, type: 3}
+  GroundTruthPoints:
+  - {x: 0.508519, y: 0.51097804}
+  MaxDistance: 1
 --- !u!1 &891850737
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,8 +291,8 @@ Camera:
   m_GameObject: {fileID: 891850737}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 1, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -363,7 +364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -323, y: 78.51}
+  m_AnchoredPosition: {x: 264.30286, y: 188.06674}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1203494417
@@ -438,11 +439,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984f9a6ab08f0495da94168ef359924d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Render: 0
   Source: {fileID: 891850740}
   Target: {fileID: 8400000, guid: 2af0516ad2c2542e0954888798bb68de, type: 2}
   OnTargetChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 437108845}
+        m_MethodName: CompareImage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEvent_Texture, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!1 &2004126474
