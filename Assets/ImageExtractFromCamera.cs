@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class ImageExtractFromCamera : MonoBehaviour {
 
-	[InspectorButton("Render")]
+	[InspectorButton("RenderAndTest")]
 	public bool _Render;
 
 	public Camera Source;
@@ -15,13 +15,19 @@ public class ImageExtractFromCamera : MonoBehaviour {
 
 	public UnityEvent_Texture OnTargetChanged;
 
-	public void	Render()
+	public Texture Render()
 	{
 		var OldTarget = Source.targetTexture;
 		Source.targetTexture = Target;
 		Source.Render();
 		Source.targetTexture = OldTarget;
 		OnTargetChanged.Invoke(Target);
+		return Target;
 	}
 
+	public void RenderAndTest()
+	{
+		var Rendered = Render();
+		OnTargetChanged.Invoke(Rendered);
+	}
 }

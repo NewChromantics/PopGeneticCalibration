@@ -372,11 +372,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07cd579c71a841d2bee4595fca57879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Object: {fileID: 0}
-  MinMax_X: {x: -199.03973, y: 225.37354}
-  TestCount_X: 0
-  MinMax_Y: {x: 0, y: 0}
-  TestCount_Y: 0
+  Object: {fileID: 1203494416}
+  Setup: {fileID: 1545589117}
+  Tester: {fileID: 437108845}
+  MinMax_X: {x: -380, y: 380}
+  TestCount_X: 10
+  MinMax_Y: {x: -200, y: 200}
+  TestCount_Y: 10
+  MinScore: 0.01
 --- !u!1 &1203494415
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20, y: 188.06674}
+  m_AnchoredPosition: {x: 20, y: 216}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1203494417
@@ -490,17 +493,17 @@ MonoBehaviour:
   OnTargetChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 437108845}
-        m_MethodName: CompareImage
-        m_Mode: 0
+      - m_Target: {fileID: 437108843}
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
     m_TypeName: UnityEvent_Texture, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!1 &2004126474

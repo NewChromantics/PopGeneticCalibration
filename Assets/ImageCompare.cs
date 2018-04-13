@@ -87,7 +87,7 @@ public class ImageCompare : MonoBehaviour {
 		return Points;
 	}
 
-	public void CompareImage(Texture Match)
+	public float CompareImage(Texture Match)
 	{
 		//	get ground truth points
 		if (GroundTruthPoints == null || GroundTruthPoints.Count == 0)
@@ -97,6 +97,7 @@ public class ImageCompare : MonoBehaviour {
 
 		var Score = GetScore(GroundTruthPoints, MatchPoints);
 		Debug.Log("Score: " + Score.ToString("0.00"));
+		return Score;
 	}
 
 	float GetScore(List<Vector2> PointsSrc,List<Vector2> PointsDst)
